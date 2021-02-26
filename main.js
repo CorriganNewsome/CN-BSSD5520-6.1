@@ -11,7 +11,7 @@ You may add elements to the html unless otherwise told to use only javascript in
 
 Overview: The user will be able to type their name and choose from a list one of the three job titles. When they slick submit, they will see their name and the job title in a div and an image based on the job title they chose.
 
-Task 1: Create an input element in html and store the user's typed name in a javascript variable when they press the submit button.
+X Task 1: Create an input element in html and store the user's typed name in a javascript variable when they press the submit button.
 
 Task 2: Create an empty select element in the html. Add any 3 job types as options of the selector via javascript (i.e Fireman, Mage, Doctor, Robot).
 
@@ -34,4 +34,10 @@ let name = (parameter(s)) => {
 
 'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {});
+document.addEventListener('DOMContentLoaded', () => {
+	const surveyButton = document.getElementById('submit');
+	surveyButton.addEventListener('click', () => {
+		const input = document.getElementById('input');
+		console.log(input.value);
+	});
+});
