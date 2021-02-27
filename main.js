@@ -42,9 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const jobSelector = document.createElement('jobs');
 	for (let i = 0; i < possibleJobs.length; i++) {
-		const jobOption = document.createElement('option');
+		const jobOption = document.createElement('options');
 		jobOption.innerHTML = possibleJobs[i];
 		jobSelector.appendChild(jobOption);
+		console.log(jobOption, possibleJobs);
 	}
 
 	surveyButton.addEventListener('click', () => {
@@ -53,12 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			errorDiv.innerHTML += 'Error: Please enter your first name.';
 		} else {
 			const contentDiv = document.getElementById('content');
-			contentDiv.innerHTML += 'Hello Dr. ' + input.value;
+			contentDiv.innerHTML += 'Hello Dr. ' + jobSelector + input.value;
 		}
 		//console.log(input.value);
 	});
 });
 
+//Function to hide a div
 let hide = () => {
 	const hideDiv = document.getElementById('hideDiv');
 	if (hideDiv.style.display === 'none') {
