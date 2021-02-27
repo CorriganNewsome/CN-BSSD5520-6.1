@@ -5,11 +5,18 @@
 		<style></style>
 	</head>
 	<body>
-		<div id="content">
+		<div id="content"></div>
+		<div id="hideDiv">
+			<div id="name">Pleae type your first name:</div>
 			<input id="input" />
-			<button id="submit">Submit</button>
-			<div id="message"></div>
-			<div id="error"></div>
+			<div id="options">Please choose from:</div>
+			<select id="jobs"></select>
+
+			<br />
+			<button onclick="hide('hideDiv')" id="submit">Submit</button>
+			<div id="entries"></div>
 		</div>
+		<div id="message"></div>
+		<div id="error"></div>
 	</body>
 </html>
