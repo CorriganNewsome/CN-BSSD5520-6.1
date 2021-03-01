@@ -40,23 +40,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const possibleJobs = ['Fireman', 'Mage', 'Doctor', 'Robot'];
 
-	const jobSelector = document.createElement('jobs');
+	const jobSelector = document.getElementById('jobs');
 	for (let i = 0; i < possibleJobs.length; i++) {
-		const jobOption = document.createElement('options');
+		const jobOption = document.createElement('option');
 		jobOption.innerHTML = possibleJobs[i];
 		jobSelector.appendChild(jobOption);
-		console.log(jobOption, possibleJobs);
+		//console.log(jobOption, possibleJobs);
 	}
 
+	const jobImg = document.createElement('img');
+	jobImg.id = 'jobImg';
+	const messageDiv = document.getElementById('message');
+	messageDiv.appendChild(jobImg);
+	const optionsDiv = document.getElementById('options');
+	optionsDiv.innerHTML += possibleJobs.join(', ');
+
 	surveyButton.addEventListener('click', () => {
+		const selectionIndex = jobSelector.selectedIndex;
+		const inputVal = possibleJobs[selectionIndex];
 		if (input.value === '') {
 			const errorDiv = document.getElementById('error');
 			errorDiv.innerHTML += 'Error: Please enter your first name.';
 		} else {
 			const contentDiv = document.getElementById('content');
-			contentDiv.innerHTML += 'Hello Dr. ' + jobSelector + input.value;
+			contentDiv.innerHTML += 'Hello ' + inputVal + ' ' + input.value;
 		}
-		//console.log(input.value);
+		//console.log(selectionIndex, inputVal);
 	});
 });
 
